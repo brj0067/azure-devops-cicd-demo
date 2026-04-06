@@ -1,18 +1,64 @@
-# Azure DevOps CI/CD Demo
+# Azure DevSecOps Key Vault Integration
 
 ## 🚀 Overview
-This project demonstrates a multi-stage CI/CD pipeline using Azure DevOps for building, testing, and deploying an application.
 
-## 🛠️ Tech Stack
-- Azure DevOps
-- YAML Pipelines
-- Git
-- Docker (planned)
-- Azure (planned)
+This project demonstrates secure secret management using Azure Key Vault integrated with Azure App Service via Managed Identity, following DevSecOps best practices.
 
-## 📦 Features
-- Multi-stage pipeline (Build, Test, Deploy)
-- Automated workflow
-- Infrastructure-ready structure
+## 🔐 Problem
 
-## 📁 Project Structure
+Storing secrets in application configuration is insecure and violates security best practices.
+
+## ✅ Solution
+
+* Azure Key Vault for secure secret storage
+* Managed Identity for authentication (no credentials)
+* RBAC for access control
+* Key Vault references in App Service
+
+## 🏗️ Architecture
+
+App Service → Managed Identity → Azure Key Vault → Secrets
+
+## 🛠️ Technologies
+
+* Azure Key Vault
+* Azure App Service
+* Managed Identity
+* Azure RBAC
+* Azure DevOps
+
+## ⚙️ Implementation
+
+### Key Vault
+
+* Created secure vault
+* Stored application secrets
+
+### Managed Identity
+
+* Enabled System-Assigned Identity
+* Used for authentication
+
+### RBAC
+
+* Assigned Key Vault Secrets User role
+
+### App Configuration
+
+* Used Key Vault references in app settings
+
+## 🔐 Security Benefits
+
+* No hardcoded secrets
+* Least privilege access
+* Centralized secret management
+
+## 📸 Screenshots
+
+(To be added)
+
+## 🚀 Future Improvements
+
+* Infrastructure as Code (Bicep/Terraform)
+* CI/CD automation
+* Monitoring and alerts
